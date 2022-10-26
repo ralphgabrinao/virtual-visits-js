@@ -50,6 +50,17 @@ jobs:
           npm install
           npx playwright install
 
+      # Run Cosmos DB Emulator
+      - name: Run Cosmos DB Emulator
+        run: |
+          Write-Host "Launching Cosmos DB Emulator"
+          Import-Module "$env:Program Files\Azure Cosmos DB Emulator\PSModules\Microsoft.Azure.CosmosDB.Emulator"
+          Start-CosmosDbEmulator
+      
+      - name: Get Cosmos DB Emulator Status
+        run: |
+          Get-CosmosDbEmulatorStatus
+          
       # Build and run e2e
       - name: Build and run e2e tests
         working-directory: ./e2e-tests
