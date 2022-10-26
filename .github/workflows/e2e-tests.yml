@@ -39,7 +39,7 @@ jobs:
       - name: Run Cosmos DB Emulator
         run: |
           Write-Host "Launching Cosmos DB Emulator"
-          Import-Module & "$env:ProgramFiles\Azure Cosmos DB Emulator\PSModules\Microsoft.Azure.CosmosDB.Emulator"
+          Import-Module "$env:ProgramFiles\Azure Cosmos DB Emulator\PSModules\Microsoft.Azure.CosmosDB.Emulator"
           Start-CosmosDbEmulator
       
       - name: Get Cosmos DB Emulator Status
