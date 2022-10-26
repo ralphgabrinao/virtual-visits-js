@@ -44,6 +44,7 @@ jobs:
       
       - name: Get Cosmos DB Emulator Status
         run: |
+          Import-Module "$env:ProgramFiles\Azure Cosmos DB Emulator\PSModules\Microsoft.Azure.CosmosDB.Emulator"
           Get-CosmosDbEmulatorStatus
   
       # Install dependencies
